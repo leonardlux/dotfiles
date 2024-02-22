@@ -1,3 +1,9 @@
+-- reset all loaded packages
+-- Therefore we can source the configs again to reload all
+local load = function(mod)
+    package.loaded[mod] = nil
+    require(mod)
+end
 -- Load options
 require("options")
 
@@ -13,6 +19,8 @@ require("colorschema")
 -- Load LSP
 require('lsp')
 
+-- Load Autocmd
+require('autocmd')
+
 -- Load Plugins Configs
-require("configs.nvim-cmp")
-require("configs.lualine")
+require("configs")
