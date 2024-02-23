@@ -6,7 +6,6 @@ return {
         priority = 1000,
         lazy = false
     },
-
     -- Mason
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
@@ -45,6 +44,11 @@ return {
     },
     -- Auto pairs
     { 'kylechui/nvim-surround', version = '*', event = 'VeryLazy' },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        opts = {} -- this is equalent to setup({}) function
+    },
     -- Nerdtree
     {
         'preservim/nerdtree'
